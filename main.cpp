@@ -1,36 +1,57 @@
 #include <bits/stdc++.h>
 using namespace std;
 /*
-1
-11 2
-20 12 3
-28 21 13 4
-35 29 22 14 5
-41 36 30 23 15 6
-46 42 37 31 24 16 7
-50 47 43 38 32 25 17 8
-53 51 48 44 39 33 26 18 9
-55 54 52 49 45 40 34 27 19 10
+
+*                 *
+* *             * *
+* * *         * * *
+* * * *     * * * *
+* * * * * * * * * *
+* * * * * * * * * *
+* * * *     * * * *
+* * *         * * *
+* *             * *
+*                 *
+
+
 */
 
 int main()
 {
     int n;
     cin >> n;
-    int start = 1;
-    for (int i = 1; i <= n; i++)
+    for (int i = n / 2 - 1; i >= 0; i--)
     {
-        int x = start;
-        int diff = n - i + 1;
-        for (int j = 1; j <= i; j++)
+        for (int j = 0; j < n / 2 - i; j++)
         {
-            cout << x << " ";
-            x -= diff;
-            diff++;
+            cout << "* ";
         }
-        start += n - i + 1;
+        for (int j = 0; j < i * 2; j++)
+        {
+            cout << "  ";
+        }
+        for (int j = 0; j < n / 2 - i; j++)
+        {
+            cout << "* ";
+        }
         cout << endl;
     }
+    for (int i = 0; i < n / 2; i++)
+    {
+        for (int j = 0; j < n / 2 - i; j++)
+        {
+            cout << "* ";
+        }
 
-    return 0;
+        for (int j = 0; j < i * 2; j++)
+        {
+            cout << "  ";
+        }
+
+        for (int j = 0; j < n / 2 - i; j++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
 }
