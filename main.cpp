@@ -1,41 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
-/*
-
-* * * * * * * * * *
-* * * *     * * * *
-* * *         * * *
-* *             * *
-*                 *
-*                 *
-* *             * *
-* * *         * * *
-* * * *     * * * *
-* * * * * * * * * *
-
-*/
-
 int main()
 {
-    int n;
-    cin >> n;
-
-    for (int i = 0; i < n / 2; i++)
-    {
-        for (int j = 0; j < n / 2 - i; j++)
-        {
-            cout << "* ";
-        }
-
-        for (int j = 0; j < i * 2; j++)
-        {
-            cout << "  ";
-        }
-
-        for (int j = 0; j < n / 2 - i; j++)
-        {
-            cout << "* ";
-        }
-        cout << endl;
+    int num ;
+    cin >> num;
+    int sum = 0;
+    while(num != 0){
+        int d = num%10;
+        sum += d;
+        num/=10;
     }
+    cout << sum;
+
+    
 }
