@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "printf \"\\033c\" && g++ -std=gnu++17 -O2 -Wall -o \"${fileDirname}/${fileBasenameNoExtension}\" \"${file}\""
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "compile and run with input.txt",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "printf \"\\033c\" && g++ -std=gnu++17 -O2 -Wall -o \"${fileDirname}/${fileBasenameNoExtension}\" \"${file}\" && \"${fileDirname}/${fileBasenameNoExtension}\" < \"${workspaceFolder}/input.txt\" > \"${workspaceFolder}/output.txt\""
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
