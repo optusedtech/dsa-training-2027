@@ -13,15 +13,10 @@ void solve()
 {
     int n;
     cin >> n;
-    int rev = 0;
-    while (n != 0)
-    {
-        int d = n % 10;
-        rev *= 10;
-        rev += d;
-        n /= 10;
-    }
-    cout << rev;
+    int k;
+    cin >> k;
+    int res = (n + k - 1) / k;
+    cout << res;
 }
 
 int main()
